@@ -1,0 +1,17 @@
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\bin\Debug\FrmConsultaEmprestimo.exe.config
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\bin\Debug\FrmConsultaEmprestimo.exe
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\bin\Debug\FrmConsultaEmprestimo.pdb
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.csproj.AssemblyReference.cache
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.csproj.SuggestedBindingRedirects.cache
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmConsultaEmprestimo.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.Properties.Resources.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.csproj.GenerateResource.cache
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.csproj.CoreCompileInputs.cache
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.exe
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.pdb
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmSelecionarEditora.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmSelecionarSecao.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmSelecionarAutor.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmSelecionarLocal.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmSelecionarItem.resources
+C:\Users\estagiario2\Documents\GitHub\FrmConsultaEmprestimo\FrmConsultaEmprestimo\obj\Debug\FrmConsultaEmprestimo.FrmSelecionarLeitor.resources
