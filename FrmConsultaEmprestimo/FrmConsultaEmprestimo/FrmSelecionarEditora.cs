@@ -81,6 +81,9 @@ namespace FrmConsultaEmprestimo
 
         }
 
-        
+        private void gridLayout_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

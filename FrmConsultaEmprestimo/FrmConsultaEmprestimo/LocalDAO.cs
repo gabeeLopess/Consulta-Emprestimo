@@ -52,7 +52,7 @@ namespace FrmConsultaEmprestimo
             {
 
                 CodLocal = codLocal,
-                Local = descricaoLocal,
+                NomeLocal = descricaoLocal,
 
 
             };

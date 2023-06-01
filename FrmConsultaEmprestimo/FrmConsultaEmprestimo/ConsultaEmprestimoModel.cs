@@ -8,39 +8,24 @@ using System.Threading.Tasks;
 
 namespace FrmConsultaEmprestimo
 {
-    [Table("mvtBibReserva")]
-    public class ConsultaEmprestimoModel
-    {
-        [Key()]
 
+    public class ConsultaEmprestimoModel { 
+ 
     public string TipoItem { get; set; }
     public string CodLeitor { get; set; }
     public string NomeLeitor { get; set; }
     public string Situacao { get; set; }
     public string CodItem { get; set; }
     public string  NomeItem { get; set; }
+    public string StatusItem { get; set; }
     public string DataInicio { get; set; }
     public string DataFim { get; set; }
+    public string NomeAutor { get; set; }
+    public string Local { get; set; }
+    public string DescricaoSecao { get; set; }
+    public string NomeEditora { get; set; }
 
-        [ForeignKey("mvtBiibAutor")]
-        [Column("codAutor")]
-        public string CodAutor { get; set; }
-        public virtual AutorModel AutorModel { get; set; }
 
-        [ForeignKey("MvtBIBLocal")]
-        [Column("codLocal")]
-        public string CodLocal { get; set; }
-        public virtual LocalModel LocalModel { get; set; }
-
-        [ForeignKey("MvtBIBSecao")]
-        [Column("codSecao")]
-        public string CodSecao { get; set; }
-        public virtual SecaoModel SecaoModel { get; set; }
-
-        [ForeignKey("mvtBiibEditora")]
-        [Column("codEditora")]
-        public string CodEditora { get; set; }
-        public virtual EditoraModel EditoraModel { get; set; }
-        public object Local { get; internal set; }
+        
     }
 }

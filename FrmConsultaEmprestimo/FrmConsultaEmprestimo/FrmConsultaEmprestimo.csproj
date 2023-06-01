@@ -47,15 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutorModel.cs" />
     <Compile Include="AutorDAO.cs" />
+    <Compile Include="AutorModel.cs" />
+    <Compile Include="LocalModel.cs" />
+    <Compile Include="EditoraModel.cs" />
+    <Compile Include="LeitorModel.cs" />
+    <Compile Include="SecaoModel.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="LeitorDAO.cs" />
     <Compile Include="EditoraDAO.cs" />
     <Compile Include="ConsultarEmprestimoDAO.cs" />
     <Compile Include="LocalDAO.cs" />
-    <Compile Include="LocalModel.cs" />
     <Compile Include="SecaoDAO.cs" />
-    <Compile Include="EditoraModel.cs" />
     <Compile Include="ConsultaEmprestimoModel.cs" />
     <Compile Include="DaoConnection.cs" />
     <Compile Include="FrmSelecionarSecao.cs">
@@ -94,7 +97,6 @@
     <Compile Include="FrmConsultarEmprestimo.Designer.cs">
       <DependentUpon>FrmConsultarEmprestimo.cs</DependentUpon>
     </Compile>
-    <Compile Include="SecaoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmSelecionarSecao.resx">
       <DependentUpon>FrmSelecionarSecao.cs</DependentUpon>

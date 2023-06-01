@@ -31,27 +31,7 @@ namespace FrmConsultaEmprestimo
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using(SqlConnection connection = DaoConnection.GetConexao())
-                {
-                    ConsultarEmprestimoDAO dao = new ConsultarEmprestimoDAO(connection);
-                    dao.Validacao(new ConsultaEmprestimoModel()
-                    {
-                        NomeItem = txtItem.Text,
-                        TipoItem = cmbTipoItem.Text,
-                        Situacao = cmbSituacao.Text,
-                        DataInicio = dtpDataInicio.Value.Date.ToString(),
-                        DataFim = dtpDataFim.Value.Date.ToString(),
-
-                    }, new EditoraModel()
-                    {
-                        NomeEditora = txtEditora.Text,
-                    }, 
-                    
-
-                }
-            }
+          
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -75,6 +55,11 @@ namespace FrmConsultaEmprestimo
         }
 
         private void gridLayout_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtItem_TextChanged(object sender, EventArgs e)
         {
 
         }

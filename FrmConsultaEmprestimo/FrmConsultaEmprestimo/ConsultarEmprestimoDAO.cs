@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace FrmConsultaEmprestimo
 {
@@ -17,93 +18,39 @@ namespace FrmConsultaEmprestimo
         {
             Connection = connection;
         }
-        public bool Validacao(ConsultaEmprestimoModel emprestimo, AutorModel autor, EditoraModel editora, LocalModel local, SecaoModel secao)
-        {
-            if (string.IsNullOrEmpty(emprestimo.NomeItem) || string.IsNullOrWhiteSpace(emprestimo.NomeItem))
-            {
-                MessageBox.Show("Informe o Item", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(emprestimo.TipoItem) || string.IsNullOrWhiteSpace(emprestimo.TipoItem))
-            {
-                MessageBox.Show("Informe o campo tipo item", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(local.Local) || string.IsNullOrWhiteSpace(local.Local))
-            {
-                MessageBox.Show("Informe o campo local", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(autor.NomeAutor) || string.IsNullOrWhiteSpace(autor.NomeAutor))
-            {
-                MessageBox.Show("Informe o campo Nome do autor", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(emprestimo.NomeLeitor) || string.IsNullOrWhiteSpace(emprestimo.NomeLeitor))
-            {
-                MessageBox.Show("Informe o campo Leitor", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(editora.NomeEditora) || string.IsNullOrWhiteSpace(editora.NomeEditora))
-            {
-                MessageBox.Show("Informe o campo Editora", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(secao.DescricaoSecao) || string.IsNullOrWhiteSpace(secao.DescricaoSecao))
-            {
-                MessageBox.Show("Informe o campo Seção", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(emprestimo.DataInicio) || string.IsNullOrWhiteSpace(emprestimo.DataInicio))
-            {
-                MessageBox.Show("Informe o campo Data Inicio", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (string.IsNullOrEmpty(emprestimo.DataFim) || string.IsNullOrWhiteSpace(emprestimo.DataFim))
-            {
-                MessageBox.Show("Informe o campo Data Fim", "Atencao", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            return true;
-        }
 
-        public void consult(ConsultaEmprestimoModel emprestimo, AutorModel autor, EditoraModel editora, LocalModel local, SecaoModel secao)
+        public List<ConsultaEmprestimoModel> BuscaEmprestimo(ConsultaEmprestimoModel consulta)
         {
 
-        }
-
-
-
-
-
-
-
-
-
-
-        public List<ConsultaEmprestimoModel> GetItens()
-        {
-            List<ConsultaEmprestimoModel> emprestimos = new List<ConsultaEmprestimoModel>();
+            List<ConsultaEmprestimoModel> buscas = new List<ConsultaEmprestimoModel>();
             using (SqlCommand command = Connection.CreateCommand())
             {
                 StringBuilder sql = new StringBuilder();
-                sql.AppendLine("SELECT codItem, nomeItem, nomeLeitor, " +
-                    "dataReserva, prazoReserva, " +
-                    "situacao FROM -- mvt");
+
+                sql.AppendLine("SELECT TOP 1 r.nomeItem, i.nomeAutor, i.nomeEditora, r.stts, r.dataReserva, r.prazoReserva");
+                sql.AppendLine("FROM mvtBibReserva r INNER JOIN mvtBibItemAcervo i ON r.codItem = i.codItem");
+                sql.AppendLine("WHERE r.nomeItem LIKE '%' + @nomeItem + '%'");
+                sql.AppendLine("OR r.nomeLeitor LIKE '%' + @nomeLeitor + '%'");
+                sql.AppendLine("AND r.stts = @stts ORDER BY codReserva desc");
+
+                command.Parameters.AddWithValue("@nomeItem", consulta.NomeItem);
+                command.Parameters.AddWithValue("@nomeLeitor", consulta.NomeLeitor);
+                command.Parameters.AddWithValue("@statusItem", consulta.StatusItem);
+
                 command.CommandText = sql.ToString();
+
                 using (SqlDataReader dr = command.ExecuteReader())
                 {
                     while (dr.Read())
                     {
-                        emprestimos.Add(PopulateDr(dr));
+                        buscas.Add(PopulateDrItem(dr));
                     }
                 }
             }
-            return emprestimos;
+            return buscas;
         }
-
-
-        public ConsultaEmprestimoModel PopulateDr(SqlDataReader dr)
+           
+        public ConsultaEmprestimoModel PopulateDrItem(SqlDataReader dr)
         {
 
             string codItem = "";

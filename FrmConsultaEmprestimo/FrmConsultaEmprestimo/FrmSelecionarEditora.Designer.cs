@@ -75,6 +75,7 @@
             this.gridLayout.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.gridLayout.Size = new System.Drawing.Size(389, 237);
             this.gridLayout.TabIndex = 21;
+            this.gridLayout.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLayout_CellContentClick_1);
             // 
             // colCodEditora
             // 

@@ -32,7 +32,7 @@ namespace FrmConsultaEmprestimo
                 {
                     DataGridViewRow row = gridLayout.Rows[gridLayout.Rows.Add()];
                     row.Cells[colCodLocal.Index].Value = local.CodLocal;
-                    row.Cells[colLocal.Index].Value = local.Local;
+                    row.Cells[colLocal.Index].Value = local.NomeLocal;
                 }
             }
         }

@@ -121,6 +121,7 @@
             this.txtItem.ReadOnly = true;
             this.txtItem.Size = new System.Drawing.Size(203, 20);
             this.txtItem.TabIndex = 5;
+            this.txtItem.TextChanged += new System.EventHandler(this.txtItem_TextChanged);
             // 
             // cmbTipoItem
             // 
